@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الوجبات</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+     <div class="LFT">
+         <span >🍽️</span>
+        <span >SVUFood Restaurant</span><br>
+        <span> مطعم الجامعة الافتراضية </span>
+        
+      </div>
+   <div class="links">
+        <a href="index.html">الرئيسية</a>  
+        <a href="AboutUs.html">من نحن</a> 
+        <a href="Meals.html">الوجبات</a>
+  </div> 
+        <hr>
+    <h1>قائمة الوجبات</h1>
+    <table  id="mealsTable">
+        <tr>
+            <th>الرمز</th>
+            <th>الوجبة</th>
+            <th>السعر (ل.س)</th>
+            <th>إظهار التفاصيل</th>
+            <th>اختيار</th>
+        </tr>
+        <tr class="meal-row">
+            <td>SF-001</td>
+            <td>سمك بوري مشوي</td>
+            <td class="price">110000</td>
+            <td><input type="checkbox" class="show-details"></td>
+            <td><input type="checkbox" class="select-meal"></td>
+        </tr>
+        <tr class="details-row" style="display:none;">
+            <td colspan="5">المكونات: سمك، زيت زيتون، ليمون، ثوم، بهارات. (المطبخ المصري)</td>
+        </tr>
+        <tr class="meal-row">
+            <td>SF-002</td>
+            <td>سمك سلمون</td>
+            <td class="price">150000</td>
+            <td><input type="checkbox" class="show-details"></td>
+            <td><input type="checkbox" class="select-meal"></td>
+        </tr>
+        <tr class="details-row" style="display:none;">
+            <td colspan="5">المكونات: سلمون، صوص الزبدة، أعشاب طازجة.</td>
+        </tr>
+        </table>
+
+    <br>
+    <button id="proceedBtn">متابعة</button>
+
+    <div id="orderFormContainer" style="display:none;">
+        <hr>
+        <h3>معلومات مقدم الطلب</h3>
+        <form id="orderForm">
+            الاسم الكامل (عربي فقط): <input type="text" id="fullName"><br><br>
+            الرقم الوطني (11 خانة): <input type="text" id="nationalID" required> (إجباري)<br><br>
+            تاريخ الولادة (dd-mm-yyyy): <input type="text" id="dob"><br><br>
+            رقم الموبايل: <input type="text" id="mobile"><br><br>
+            الإيميل: <input type="email" id="email"><br><br>
+            <button type="button" id="submitBtn">إرسال</button>
+        </form>
+    </div>
+
+    <hr>
+     <div style="text-align: center;">
+      <a href="index.html">الرئيسية</a>
+      <a href="AboutUs.html">من نحن</a>
+      <a href="Meals.html">الوجبات</a>
+    </div>  
+ <div >
+         <span >🍽️</span>
+        <span >SVUFood Restaurant</span><br>
+        <span> مطعم الجامعة الافتراضية </span>
+    </div>
+    <script src="myFunctions.js"></script>
+</body>
+</html>
