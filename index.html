@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>الصفحة الرئيسية</title>
-    
+    <title>الصفحة الرئيسية | مطعمنا</title>
     <link rel="stylesheet" href="Style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="myFunctions.js"></script>
 </head>
-<body>
-     
-      <div class="LFT">
-         <span >🍽️</span>
+<body class="page-font">
+
+    
+    <nav >
+        <div class="LFT">
+         <span ></span>
         <span >SVUFood Restaurant</span><br>
-        <span> مطعم الجامعة الافتراضية </span>
+        <span>🍽️ مطعم الجامعة الافتراضية </span>
       </div>
-      
     <div class="links">
-      <a href="index.html">الرئيسية</a>
-      <a href="AboutUs.html">من نحن</a>
-      <a href="Meals.html">الوجبات</a>
-    </div>  
-    <hr>
-    <h1>موقع طلب الطعام - مشروع الجامعة الإفتراضية SVU</h1>
-    <div >
-        <P>أشهى المأكولات السمك الطازجة — خبرة تمتد لأكثر من ثلاثين عاماً في تقديم أفضل الأطباق</P>
-        <h3>أسماء الفريق :</h3>
-      <table>
-              <thead>
+        <a href="index.html"  >الرئيسية</a>
+        <a href="AboutUs.html" >من نحن</a>
+        <a href="Meals.html" >الوجبات</a>
+      </div>
+    </nav>
+    <main class="container">
+        <h1>مشروع نظام طلب الطعام الجماعي</h1>
+        <section class="card">
+            <h2>أعضاء المجموعة</h2>
+            <table class="info-table">
+                <thead>
                 <tr>
                   <th>#</th>
                   <th>الاسم بالعربية</th>
@@ -79,23 +81,28 @@
                 </tr>
               </tbody>
             </table>
-    </div>
-    <div class="project-link">
-        <p>  موقعنا على الانترنيت  :<a href="https://anaskreem.github.io/SVUfood/">SVUfood Restaurant</a></p>
-    </div>
-<footer>
- <hr>
-    <div >
-         <span >🍽️</span>
-        <span >SVUFood Restaurant</span><br>
-        <span> مطعم الجامعة الافتراضية </span>
-        
-      </div>
-    <div style="text-align: center;">
-      <a href="index.html">الرئيسية</a>
-      <a href="AboutUs.html">من نحن</a>
-      <a href="Meals.html">الوجبات</a>
-    </div>  
-</footer>
+        </section>
+
+        <section class="card">
+            <h3>رابط النسخة المستضافة:</h3>
+            <div>
+                <a class="deploy-link"
+                    href="https://YOUR-DEPLOYMENT-URL"
+                    target="_blank"
+                    rel="noopener">
+                    https://YOUR-DEPLOYMENT-URL
+                </a>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>ملاحظات المجموعة</h2>
+            <p>
+                تم تطوير جميع الوظائف وترجمة الموقع للغة العربية بالكامل. الرجاء استخدام الموقع من جهاز متصل بالإنترنت لدعم مكتبة jQuery. لأي استفسار تواصلوا معنا عبر صفحة من نحن.
+            </p>
+                <P style="text-align: center;  ;">© 2026 مشروع مادة تصميم وتطوير تطبيقات الويب — الجامعة الافتراضية السورية</P>
+
+        </section>
+    </main>
 </body>
 </html>

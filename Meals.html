@@ -1,82 +1,234 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>الوجبات</title>
+    <title>الوجبات | مطعمنا</title>
     <link rel="stylesheet" href="Style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body>
-     <div class="LFT">
-         <span >🍽️</span>
-        <span >SVUFood Restaurant</span><br>
-        <span> مطعم الجامعة الافتراضية </span>
-        
-      </div>
-   <div class="links">
-        <a href="index.html">الرئيسية</a>  
-        <a href="AboutUs.html">من نحن</a> 
-        <a href="Meals.html">الوجبات</a>
-  </div> 
-        <hr>
-    <h1>قائمة الوجبات</h1>
-    <table  id="mealsTable">
-        <tr>
-            <th>الرمز</th>
-            <th>الوجبة</th>
-            <th>السعر (ل.س)</th>
-            <th>إظهار التفاصيل</th>
-            <th>اختيار</th>
-        </tr>
-        <tr class="meal-row">
-            <td>SF-001</td>
-            <td>سمك بوري مشوي</td>
-            <td class="price">110000</td>
-            <td><input type="checkbox" class="show-details"></td>
-            <td><input type="checkbox" class="select-meal"></td>
-        </tr>
-        <tr class="details-row" style="display:none;">
-            <td colspan="5">المكونات: سمك، زيت زيتون، ليمون، ثوم، بهارات. (المطبخ المصري)</td>
-        </tr>
-        <tr class="meal-row">
-            <td>SF-002</td>
-            <td>سمك سلمون</td>
-            <td class="price">150000</td>
-            <td><input type="checkbox" class="show-details"></td>
-            <td><input type="checkbox" class="select-meal"></td>
-        </tr>
-        <tr class="details-row" style="display:none;">
-            <td colspan="5">المكونات: سلمون، صوص الزبدة، أعشاب طازجة.</td>
-        </tr>
-        </table>
-
-    <br>
-    <button id="proceedBtn">متابعة</button>
-
-    <div id="orderFormContainer" style="display:none;">
-        <hr>
-        <h3>معلومات مقدم الطلب</h3>
-        <form id="orderForm">
-            الاسم الكامل (عربي فقط): <input type="text" id="fullName"><br><br>
-            الرقم الوطني (11 خانة): <input type="text" id="nationalID" required> (إجباري)<br><br>
-            تاريخ الولادة (dd-mm-yyyy): <input type="text" id="dob"><br><br>
-            رقم الموبايل: <input type="text" id="mobile"><br><br>
-            الإيميل: <input type="email" id="email"><br><br>
-            <button type="button" id="submitBtn">إرسال</button>
-        </form>
-    </div>
-
-    <hr>
-     <div style="text-align: center;">
-      <a href="index.html">الرئيسية</a>
-      <a href="AboutUs.html">من نحن</a>
-      <a href="Meals.html">الوجبات</a>
-    </div>  
- <div >
-         <span >🍽️</span>
-        <span >SVUFood Restaurant</span><br>
-        <span> مطعم الجامعة الافتراضية </span>
-    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="myFunctions.js"></script>
+</head>
+<body class="page-font">
+    <nav class="navbar">
+        <div class="LFT">
+         <span ></span>
+        <span >SVUFood Restaurant</span><br>
+        <span>🍽️ مطعم الجامعة الافتراضية </span>
+      </div>
+      <div class="links">
+        <a href="index.html" >الرئيسية</a>
+        <a href="AboutUs.html" >من نحن</a>
+        <a href="Meals.html" >الوجبات</a>
+        </div>
+    </nav>
+    <main class="container">
+        <!-- SECTION 1: MEALS TABLE -->
+        <section id="meals-table-section" class="card">
+            <h1>قائمة الوجبات</h1>
+            <table id="meals-table">
+                <thead>
+                    <tr>
+                        <th>الرمز</th>
+                        <th>الوجبة/العنوان</th>
+                        <th>السعر</th>
+                        <th>إظهار التفاصيل</th>
+                        <th>اختيار</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Row 1 -->
+                    <tr>
+                        <td>SF-001</td>
+                        <td>وجبة سمك بوري مشوي لشخصين</td>
+                        <td>110,000 ل.س</td>
+                        <td class="td-center">
+                            <input type="checkbox" class="toggle-details" data-meal="SF-001" id="toggle-SF-001">
+                        </td>
+                        <td class="td-center">
+                            <input type="checkbox" class="select-meal" data-meal="SF-001">
+                        </td>
+                    </tr>
+                    <tr class="details-row" data-meal="SF-001" style="display:none;">
+                        <td colspan="5">
+                            <div class="row-details">
+                                <div><strong>المطبخ:</strong> شرقي</div>
+                                <div><strong>تصنيف الطعام:</strong> مأكولات بحرية</div>
+                                <div><strong>المكونات:</strong>
+                                    <ul>
+                                        <li>سمك بوري طازج</li>
+                                        <li>خلطة توابل خاصة</li>
+                                        <li>خضار مشوية</li>
+                                        <li>أرز</li>
+                                    </ul>
+                                </div>
+                                <img src="images/fish.png" alt="وجبة سمك بوري مشوي" class="meal-img">
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr>
+                        <td>SF-002</td>
+                        <td>شاورما دجاج</td>
+                        <td>75,000 ل.س</td>
+                        <td class="td-center">
+                            <input type="checkbox" class="toggle-details" data-meal="SF-002" id="toggle-SF-002">
+                        </td>
+                        <td class="td-center">
+                            <input type="checkbox" class="select-meal" data-meal="SF-002">
+                        </td>
+                    </tr>
+                    <tr class="details-row" data-meal="SF-002" style="display:none;">
+                        <td colspan="5">
+                            <div class="row-details">
+                                <div><strong>المطبخ:</strong> شرقي</div>
+                                <div><strong>تصنيف الطعام:</strong> سندويشات</div>
+                                <div><strong>المكونات:</strong>
+                                    <ul>
+                                        <li>دجاج متبل خاص</li>
+                                        <li>بطاطا مقلية</li>
+                                        <li>خبز عربي</li>
+                                        <li>صلصة الثوم</li>
+                                    </ul>
+                                </div>
+                                <img src="images/shawarma.png" alt="شاورما دجاج" class="meal-img">
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr>
+                        <td>SF-003</td>
+                        <td>برغر لحم مزدوج</td>
+                        <td>90,000 ل.س</td>
+                        <td class="td-center">
+                            <input type="checkbox" class="toggle-details" data-meal="SF-003" id="toggle-SF-003">
+                        </td>
+                        <td class="td-center">
+                            <input type="checkbox" class="select-meal" data-meal="SF-003">
+                        </td>
+                    </tr>
+                    <tr class="details-row" data-meal="SF-003" style="display:none;">
+                        <td colspan="5">
+                            <div class="row-details">
+                                <div><strong>المطبخ:</strong> غربي</div>
+                                <div><strong>تصنيف الطعام:</strong> برغر</div>
+                                <div><strong>المكونات:</strong>
+                                    <ul>
+                                        <li>لحم بقري طازج</li>
+                                        <li>جبنة شيدر</li>
+                                        <li>خبز برغر محمص</li>
+                                        <li>صلصة برغر خاصة</li>
+                                    </ul>
+                                </div>
+                                <img src="images/burger.png" alt="برغر لحم مزدوج" class="meal-img">
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 4 -->
+                    <tr>
+                        <td>SF-004</td>
+                        <td>مشاوي مشكلة لشخصين</td>
+                        <td>150,000 ل.س</td>
+                        <td class="td-center">
+                            <input type="checkbox" class="toggle-details" data-meal="SF-004" id="toggle-SF-004">
+                        </td>
+                        <td class="td-center">
+                            <input type="checkbox" class="select-meal" data-meal="SF-004">
+                        </td>
+                    </tr>
+                    <tr class="details-row" data-meal="SF-004" style="display:none;">
+                        <td colspan="5">
+                            <div class="row-details">
+                                <div><strong>المطبخ:</strong> شرقي</div>
+                                <div><strong>تصنيف الطعام:</strong> مشاوي</div>
+                                <div><strong>المكونات:</strong>
+                                    <ul>
+                                        <li>كباب</li>
+                                        <li>شيش طاووق</li>
+                                        <li>ريش غنم</li>
+                                        <li>سلطة خضراء</li>
+                                    </ul>
+                                </div>
+                                <img src="images/mixgrill.png" alt="مشاوي مشكلة" class="meal-img">
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Row 5 -->
+                    <tr>
+                        <td>SF-005</td>
+                        <td>بيتزا مارغريتا</td>
+                        <td>65,000 ل.س</td>
+                        <td class="td-center">
+                            <input type="checkbox" class="toggle-details" data-meal="SF-005" id="toggle-SF-005">
+                        </td>
+                        <td class="td-center">
+                            <input type="checkbox" class="select-meal" data-meal="SF-005">
+                        </td>
+                    </tr>
+                    <tr class="details-row" data-meal="SF-005" style="display:none;">
+                        <td colspan="5">
+                            <div class="row-details">
+                                <div><strong>المطبخ:</strong> غربي</div>
+                                <div><strong>تصنيف الطعام:</strong> بيتزا</div>
+                                <div><strong>المكونات:</strong>
+                    <ul>
+                                        <li>عجينة طازجة</li>
+                                        <li>جبنة موزاريلا</li>
+                                        <li>صلصة طماطم خاصة</li>
+                                        <li>ريحان طازج</li>
+                                    </ul>
+                                </div>
+                                <img src="images/pizza.png" alt="بيتزا مارغريتا" class="meal-img">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="continue-btn" class="primary-btn">متابعة</button>
+        </section>
+
+        <!-- SECTION 4: ORDER FORM (hidden initially) -->
+        <section id="order-form-section" class="card" style="display:none;">
+            <h2>إدخال معلومات الطلب</h2>
+            <form id="order-form" autocomplete="off" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="customerName">الاسم الكامل <span class="note">(اختياري) عربي فقط</span></label>
+                    <input type="text" id="customerName" class="input-style">
+                    <div id="name-error" class="error-msg"></div>
+                </div>
+                <div class="form-group">
+                    <label for="nationalId">الرقم الوطني <span style="color:red">*</span></label>
+                    <input type="text" id="nationalId" maxlength="11" class="input-style" required>
+                    <div id="nid-error" class="error-msg"></div>
+                </div>
+                <div class="form-group">
+                    <label for="dob">تاريخ الولادة <span class="note">(اختياري)</span></label>
+                    <input type="date" id="dob" class="input-style">
+                    <div id="dob-error" class="error-msg"></div>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">رقم الموبايل <span class="note">(اختياري)</span></label>
+                    <input type="text" id="mobile" class="input-style">
+                    <div id="mobile-error" class="error-msg"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">الإيميل <span class="note">(اختياري)</span></label>
+                    <input type="email" id="email" class="input-style">
+                    <div id="email-error" class="error-msg"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="back-btn" class="secondary-btn">رجوع</button>
+                    <button type="submit" id="submit-btn" class="primary-btn">إرسال</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- SECTION 5: ORDER SUMMARY / MODAL -->
+        <div id="order-summary" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span id="close-summary" class="close-btn">&times;</span>
+                <h2>تفاصيل طلبك</h2>
+                <div id="summary-details"></div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
